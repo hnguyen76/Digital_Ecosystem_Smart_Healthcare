@@ -1,0 +1,18 @@
+{
+  "raw_dataset": "digital_ecosystem_smart_healthcare_dataset.csv",
+  "clean_dataset": "data/processed/smart_healthcare_cleaned.csv",
+  "raw_records": 4000,
+  "clean_records": 4000,
+  "duplicates_removed": 0,
+  "missing_values_before_cleaning": {},
+  "numeric_imputations": {},
+  "out_of_range_values_clamped": {},
+  "invalid_status_values_replaced": 0,
+  "status_distribution": {
+    "Critical": 1003,
+    "High_Risk": 997,
+    "Moderate_Risk": 1001,
+    "Stable": 999
+  },
+  "created_by": "Hieu Nguyen"
+}

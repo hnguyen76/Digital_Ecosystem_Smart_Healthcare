@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Digital Ecosystem Smart Healthcare Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <header class="dashboard-header">
+        <div>
+          <p class="eyebrow">Digital Ecosystem Smart Healthcare</p>
+          <h1>Smart Healthcare Analytics Dashboard</h1>
+          <p class="header-copy">
+            Connected-care operations, patient risk, and clinical signals in one executive view.
+          </p>
+        </div>
+        <div class="header-meta">
+          <span class="creator-badge">Created by Hieu Nguyen</span>
+          <span id="datasetMeta" class="dataset-meta">CSV powered analytics</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="control-band" aria-label="Dashboard controls">
+          <div>
+            <p class="control-label">Patient cohort</p>
+            <div id="statusFilters" class="segmented-control"></div>
+          </div>
+          <label class="metric-control" for="metricSelect">
+            <span>Focus metric</span>
+            <select id="metricSelect"></select>
+          </label>
+        </section>
+
+        <section id="kpiGrid" class="kpi-grid" aria-label="Summary metrics">
+          <article class="kpi-card">
+            <p>Total records</p>
+            <strong id="kpiTotal">--</strong>
+            <span id="kpiTotalSub">Loading dataset</span>
+          </article>
+          <article class="kpi-card">
+            <p>High acuity share</p>
+            <strong id="kpiAcuity">--</strong>
+            <span id="kpiAcuitySub">Critical plus high risk</span>
+          </article>
+          <article class="kpi-card">
+            <p>Avg alert frequency</p>
+            <strong id="kpiAlerts">--</strong>
+            <span id="kpiAlertsSub">Per patient record</span>
+          </article>
+          <article class="kpi-card">
+            <p>Digital readiness</p>
+            <strong id="kpiReadiness">--</strong>
+            <span id="kpiReadinessSub">IoT, EHR, cloud, wearables</span>
+          </article>
+          <article class="kpi-card">
+            <p>Network latency</p>
+            <strong id="kpiLatency">--</strong>
+            <span id="kpiLatencySub">Care data delivery</span>
+          </article>
+        </section>
+
+        <section class="dashboard-grid" aria-label="Healthcare analytics">
+          <article class="panel">
+            <header class="panel-header">
+              <div>
+                <p class="panel-kicker">Risk mix</p>
+                <h2>Patient Health Status</h2>
+              </div>
+              <span id="distributionTotal" class="panel-chip">-- records</span>
+            </header>
+            <div class="distribution-layout">
+              <div class="donut-block">
+                <div id="riskDonut" class="risk-donut"></div>
+                <div class="donut-center">
+                  <strong id="donutRiskPct">--</strong>
+                  <span>Critical + High</span>
+                </div>
+              </div>
+              <div id="statusLegend" class="status-legend"></div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <header class="panel-header">
+              <div>
+                <p class="panel-kicker">Clinical benchmark</p>
+                <h2 id="metricChartTitle">Metric by Status</h2>
+              </div>
+            </header>
+            <div id="metricBars" class="bar-chart"></div>
+          </article>
+
+          <article class="panel panel-wide">
+            <header class="panel-header">
+              <div>
+                <p class="panel-kicker">Connected care</p>
+                <h2>Digital Readiness Map</h2>
+              </div>
+              <span id="scatterCount" class="panel-chip">-- plotted</span>
+            </header>
+            <div class="scatter-wrap">
+              <svg id="scatterPlot" role="img" aria-label="Digital readiness scatter plot"></svg>
+            </div>
+          </article>
+
+          <article class="panel">
+            <header class="panel-header">
+              <div>
+                <p class="panel-kicker">Care prioritization</p>
+                <h2>Priority Watchlist</h2>
+              </div>
+            </header>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Patient</th>
+                    <th>Status</th>
+                    <th>Score</th>
+                    <th>Vitals</th>
+                    <th>Alerts</th>
+                    <th>EHR</th>
+                  </tr>
+                </thead>
+                <tbody id="watchlistBody"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel">
+            <header class="panel-header">
+              <div>
+                <p class="panel-kicker">Decision signals</p>
+                <h2>Portfolio Insights</h2>
+              </div>
+            </header>
+            <div id="insightList" class="insight-list"></div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="dashboard-footer">
+        <span>Created by Hieu Nguyen</span>
+        <span>Digital Ecosystem Smart Healthcare Dashboard</span>
+      </footer>
+    </div>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>
